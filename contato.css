@@ -84,8 +84,8 @@ body {
     border-radius: 10px;
     width: 100%;
     max-width: 800px;
-	margin-left: 350px;
-	margin-top: 30px;
+	margin: 40px auto; /* Centraliza horizontalmente e define o espaçamento superior */
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-container h2 {
@@ -127,14 +127,13 @@ button {
     border-radius: 20px 0 20px 0; 
     background-color: #FFFCE2; 
     text-align: center;
-    margin-top: 20px;
+    margin: 20px auto; /* Centraliza horizontalmente */
 	text-decoration: none;
     color: #0E5935; 
     font-size: 22px; 
     font-weight: bold; 
     font-family: Montserrat, sans-serif; 
 	width: 300px;
-	margin-left: 220px;
 }
 
 button:hover {

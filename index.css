@@ -177,3 +177,30 @@ footer {
 .footer-text {
     color: #0E5935; 
 }
+
+/* Celulares */
+@media only screen and (max-width: 450px) {
+	.logo {
+    max-height: 150px;
+    width: 120px;
+}
+
+.menu ul {
+		gap: 10px; /* Espaçamento maior entre os itens no modo vertical */
+	}
+	
+.header-content {
+		align-items: center;
+		text-align: center;
+	}
+	
+.menu a {
+		font-size: 18px;
+		padding: 5px 10px;
+	}
+	
+.imagem-largura-total {
+	margin-top: 50px;
+	widhth:70px;
+    max-width: 800px;
+}

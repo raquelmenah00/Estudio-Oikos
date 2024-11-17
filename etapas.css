@@ -69,14 +69,48 @@ body {
     color: #0E5935; /* Verde escuro */
 }
 
+h2.titulo-processo {
+    font-size: 44px;
+    color: #0E5935;
+	margin-top: 70px;
+}
+
+h3.numero-etapa {
+    font-size: 37px;
+    color: #0E5935;
+    margin-top: 20px;
+}
+
+h3.nome-etapa {
+    font-size: 37px;
+    color: #0E5935;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.paragrafo-processo {
+    font-size: 22px;
+}
+
+.img-processo {
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+	margin-top: 80px
+}
+
 .imagem-lado-esquerdo img {
     width: 80%;
     height: auto;
-    padding-top: 35px;
     border-radius: 15px;
     overflow: hidden;
 }
 
+.texto-container {
+    margin-left: 95px; /* Ajuste conforme necessário */
+}
 
 footer {
     background-color: #B7CB9E; 
