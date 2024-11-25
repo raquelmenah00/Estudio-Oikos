@@ -9,6 +9,7 @@
 body {
     font-family: Montserrat, sans-serif;
 	padding-top: 70px; /* Ajuste conforme a altura do seu cabeçalho */
+	overflow-x: hidden; /* Remove rolagem horizontal */	
 }
 
 .main-table {
@@ -17,7 +18,7 @@ body {
     max-width: 100%;
     margin: 0 auto; 
     overflow-x: hidden;
-    table-layout: fixed
+    table-layout: fixed;
 }
 
 /* Estilo do Cabeçalho */
@@ -28,13 +29,14 @@ body {
 	position: fixed; /* Torna o cabeçalho fixo no topo */
     top: 0; /* Posiciona-o no topo da tela */
     z-index: 1000; /* Garante que ele fique acima do conteúdo da página */
+	top: 0;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, menu à direita */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    max-width: 100%; /* Limita a largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
@@ -42,6 +44,7 @@ body {
 .logo {
     max-height: 85px;
     width: auto;
+	margin-left: 150px;
 }
 
 /* Menu */
@@ -63,17 +66,78 @@ body {
     transition: background-color 0.3s;
 }
 
+
+/* Estilo padrão para o desktop */
+.menu {
+    display: flex; /* Exibe o menu horizontalmente em desktop */
+    justify-content: flex-start;
+}
+
 .menu a:hover,
 .menu a.active { /* Estilo para hover e página ativa */
     background-color: #B7CB9E;
     color: #0E5935; /* Verde escuro */
 }
 
-.imagem-largura-total {
-	margin-top: 20px;
-    width: 100%;
-    height: auto;	
+/* Estilo padrão para desktop */
+.menu-hamburguer {
+    display: none; /* O botão hambúrguer não aparece no desktop */
+	flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
     display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFCE2; /* Cor das barras */
+    border-radius: 3px;
+}
+
+.imagem-inicial img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra toda a área */
+	margin-top: 20px;
+	display: block;
+}
+
+/* Seção Sobre o Estúdio */
+.sobre-o-estudio {
+    display: flex; /* Cria um layout em linha */
+    flex-wrap: wrap; /* Permite quebrar linhas em telas pequenas */
+    gap: 16px; /* Espaço entre os elementos */
+	margin-top: 20px; /* Espaço entre a imagem inicial e a seção */
+    padding: 16px;
+}
+
+.imagem-lado-esquerdo {
+    flex: 1; /* Faz a imagem ocupar espaço proporcional */
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.texto-lado-direito {
+    flex: 2; /* Faz o texto ocupar mais espaço que a imagem */
+    padding: 40px; /* Espaço interno para o texto */
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+.imagem-lado-esquerdo img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção */
+}
+
+h2 {
+    color: #0E5935;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .texto-lado-direito h2, .texto-lado-esquerdo h2 {
@@ -90,50 +154,68 @@ body {
     text-align: left;
 }
 
-
-.quadrado-verde {
-    background-color: #DEE5C3;
-    padding: 30px;		
+/* Seção Quadrado Verde com Estatísticas */
+.imagem-quadrado img {
+	width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: 100%; /* Faz a imagem ocupar toda a altura */
+    object-fit: cover; /* Ajusta a imagem sem deformar */
+	display: block;
 }
 
-.stats-table {
-    width: 100%;
-    table-layout: auto; 
-    word-wrap: break-word; 
+/* Importância e propósito */
+.importancia-proposito {
+    display: flex; /* Cria um layout em linha */
+    flex-wrap: wrap; /* Permite quebrar linhas em telas pequenas */
+    gap: 16px; /* Espaço entre os elementos */
+	margin-top: 20px;
+    padding: 16px;
 }
 
-.responsive-img {
-    max-width: 90%;
-    height: auto;
+.imagem-lado-direito {
+    flex: 1; /* Faz a imagem ocupar espaço proporcional */
+	margin-right: 40px;
+	margin-bottom: 20px;
 }
 
-.item {
-    text-align: center;
-    padding: 20px;
-    max-width: 100%;
-    height: auto;
+.texto-lado-esquerdo {
+    flex: 2; /* Faz o texto ocupar mais espaço que a imagem */
+    padding: 40px; /* Espaço interno para o texto */
+	margin-right: 40px;
+	margin-top: 20px;
+	margin-left: 40px;
+    margin-right: 50px;
 }
 
-.item h3 {
+.imagem-lado-direito img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção */
+}
+
+h2 {
     color: #0E5935;
-    font-size: 24px;
-}
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
 
-.elemento {
-  padding-top: 10px;    
-  padding-right: 15px;  
-  padding-bottom: 10px; 
-  padding-left: 15px;  
-  margin-left: 2px;
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+    
+ body, html {
+        height: 100%;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        width: 100vw;  /* largura total da tela */
 }
 
+}
 .botao-portfolio {
     display: inline-block;
     padding: 10px 30px;
@@ -141,7 +223,9 @@ body {
     border-radius: 20px 0 20px 0; 
     background-color: #FFFCE2; 
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 
 .botao-portfolio a {
@@ -156,10 +240,17 @@ body {
     background-color: #B7CB9E; 
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+
 footer {
     background-color: #B7CB9E; 
     padding:7px;
     text-align: center;
+	max-width: 100%;
+    margin-top: 50px;
 }
 
 .footer-container {
@@ -178,29 +269,167 @@ footer {
     color: #0E5935; 
 }
 
-/* Celulares */
-@media only screen and (max-width: 450px) {
-	.logo {
+/* Responsividade */
+@media only screen and (max-width: 800px) {
+.logo {
     max-height: 150px;
-    width: 120px;
+    width: 100px;
+	margin-left: 25px;
 }
-
-.menu ul {
-		gap: 10px; /* Espaçamento maior entre os itens no modo vertical */
-	}
 	
 .header-content {
 		align-items: center;
 		text-align: center;
-	}
+}
+
+.imagem-largura-total {
+	    margin-top: 50px;
+	    width:100%;
+        max-width: 800px;
+}
+
+.menu-hamburguer {
+        display: flex; /* Exibe o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 40px;
+}
+
+.menu {
+        display: none; /* Esconde o menu padrão inicialmente */
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        flex-direction: column; /* Os itens do menu ficam em coluna */
+        background-color: rgba(14, 89, 53, 0.9); /* Verde escuro com 90% de opacidade */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+}
+	
+.menu-hamburguer span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFCE2; /* Cor das barras */
+        border-radius: 3px;
+}
+
+.menu ul {
+        display: block; /* Itens em lista vertical */
+		margin: 0;
+        padding: 0;
+}
+
+.menu li {
+        margin: 15px 0;
+    }
 	
 .menu a {
-		font-size: 18px;
-		padding: 5px 10px;
-	}
+        font-size: 20px; /* Reduz a fonte dos links */
+        padding: 10px 15px; /* Ajusta o padding para um clique confortável */
+        text-align: center; /* Centraliza o texto */
+        display: block; /* Faz o link ocupar toda a largura */
+}
+
+.imagem-inicial img {
+	margin-top: 30px;
+}
+
+.sobre-o-estudio h2 {
+        width: 100%; /* Faz o título ocupar toda a largura da tela */
+        text-align: center; /* Centraliza o título no celular (opcional) */
+        margin: 0; /* Remove margens laterais */
+        padding: 16px 0; /* Adiciona um espaçamento interno no topo e embaixo */
+        font-size: 30px; /* Ajusta o tamanho da fonte para telas menores */
+}
+
+.sobre-o-estudio p {
+        font-size: 16px; /* Diminui o tamanho da fonte dos parágrafos */
+        line-height: 1.5; /* Ajusta o espaçamento entre as linhas para melhor leitura */
+        margin-bottom: 12px; /* Espaço entre os parágrafos */
+    }
 	
-.imagem-largura-total {
-	margin-top: 50px;
-	widhth:70px;
-    max-width: 800px;
+
+.sobre-o-estudio {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        padding: 16px; /* Reduz o padding para telas menores */
+}
+
+.imagem-lado-esquerdo{
+        order: 2; /* Coloca a imagem depois do texto */
+        margin: 0; /* Remove margens laterais nos elementos */
+        padding: 0; /* Reduz padding interno */
+		margin-top: -10px;
+}
+	
+.texto-lado-direito {
+        order: 1; /* Coloca o texto antes da imagem */
+		margin: 0; /* Remove margens laterais nos elementos */
+        padding: 0; /* Reduz padding interno */
+		margin-top: -25px;
+}
+
+.importancia-proposito h2 {
+    width: 100%; /* Faz o título ocupar toda a largura da tela */
+    text-align: center; /* Centraliza o título no celular (opcional) */
+    margin: 0; /* Remove margens laterais */
+    padding: 16px 0; /* Adiciona um espaçamento interno no topo e embaixo */
+    font-size: 30px; /* Ajusta o tamanho da fonte para telas menores */
+}
+
+.importancia-proposito p {
+    font-size: 16px; /* Diminui o tamanho da fonte dos parágrafos */
+    line-height: 1.5; /* Ajusta o espaçamento entre as linhas para melhor leitura */
+    margin-bottom: 12px; /* Espaço entre os parágrafos */
+}
+
+
+.importancia-proposito {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    padding: 16px; /* Reduz o padding para telas menores */
+}
+
+.imagem-lado-direito{
+    order: 2; /* Coloca a imagem depois do texto */
+    margin: 0; /* Remove margens laterais nos elementos */
+    padding: 0; /* Reduz padding interno */
+    margin-top: -10px;
+}
+
+.texto-lado-esquerdo{
+    order: 1; /* Coloca o texto antes da imagem */
+    margin: 0; /* Remove margens laterais nos elementos */
+    padding: 0; /* Reduz padding interno */
+    margin-top: -25px;
+}
+
+
+.botao-portfolio {
+    border: 1.6px solid #0E5935;
+    border-radius: 20px 0 20px 0; 
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 35px;
+    width: 220px;
+    display: flex; /* Usar flexbox para centralização */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.botao-portfolio a {
+    font-size: 12px; 
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+    .footer-image {
+    width: 400px;
+	margin-right: 20px;
+	}
 }

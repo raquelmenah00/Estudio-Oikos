@@ -9,6 +9,7 @@
 body {
     font-family: Montserrat, sans-serif;
 	padding-top: 70px; /* Ajuste conforme a altura do seu cabeçalho */
+    overflow-x: hidden; /* Remove rolagem horizontal */	
 }
 
 .main-table {
@@ -34,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, menu à direita */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    max-width: 100%; /* Limita a largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
@@ -42,6 +43,7 @@ body {
 .logo {
     max-height: 85px;
     width: auto;
+    margin-left: 150px;
 }
 
 /* Menu */
@@ -63,88 +65,131 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Estilo padrão para o desktop */
+.menu {
+    display: flex; /* Exibe o menu horizontalmente em desktop */
+    justify-content: flex-start;
+}
+
 .menu a:hover,
 .menu a.active { /* Estilo para hover e página ativa */
     background-color: #B7CB9E;
     color: #0E5935; /* Verde escuro */
 }
 
-
-/* Estilos para a página de contato */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Estilo padrão para desktop */
+.menu-hamburguer {
+    display: none; /* O botão hambúrguer não aparece no desktop */
+	flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
 }
 
-.contact-container {
-    background-color: #DEE5C3;
-    padding: 20px 30px;
-    border-radius: 10px;
+.menu-hamburguer span {
+    display: block;
     width: 100%;
-    max-width: 800px;
-	margin: 40px auto; /* Centraliza horizontalmente e define o espaçamento superior */
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 3px;
+    background-color: #FFFCE2; /* Cor das barras */
+    border-radius: 3px;
 }
 
-.contact-container h2 {
-    text-align: center;
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.contact-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+.contact-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+	margin-top: 100px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+	margin-top: 100px;
+}
+
+.contact-form h2 {
     color: #0E5935;
+    font-size: 35px;
     margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
+.contact-form label {
     color: #0E5935;
     font-weight: 600;
-	font-size: 25px;
+    font-size: 22px;
 }
 
-input, textarea {
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #FFFCE2;
+    border: 2px solid #0E5935;
     border-radius: 5px;
     font-size: 16px;
     background-color: #FFFCE2;
+	resize: vertical;
 }
 
-input:focus, textarea:focus {
+/* Foco nos campos de preenchimento */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0E5935; /* Cor da borda ao focar no campo */
+    border-width: 2.5px;     /* Aumenta a espessura ao focar */
+    outline: none;         /* Remove o contorno padrão do navegador */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: #0E5935;
     outline: none;
 }
 
-button {
-	display: inline-block;
+.contact-form button {
+    align-self: flex-end;
     padding: 10px 30px;
     border: 2px solid #0E5935;
-    border-radius: 20px 0 20px 0; 
-    background-color: #FFFCE2; 
-    text-align: center;
-    margin: 20px auto; /* Centraliza horizontalmente */
-	text-decoration: none;
-    color: #0E5935; 
-    font-size: 22px; 
-    font-weight: bold; 
-    font-family: Montserrat, sans-serif; 
-	width: 300px;
+    border-radius: 20px 0 20px 0;
+    background-color: #FFFCE2;
+    color: #0E5935;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+	width: 200px;
 }
 
-button:hover {
+.contact-form button:hover {
     background-color: #DEE5C3;
 }
+
+
+html, body {
+    overflow-x: hidden;
+  }
 
 footer {
     background-color: #B7CB9E; 
     padding:7px;
     text-align: center;
-	margin-top: 65px;
+    max-width: 100%;
+	margin-top: 30px;
 }
 
 .footer-container {
@@ -161,4 +206,108 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+}
+
+/* Celulares */
+@media only screen and (max-width: 800px) {
+	.logo {
+    max-height: 150px;
+    width: 100px;
+	margin-left: 25px;
+    }
+	
+    .header-content {
+		align-items: center;
+		text-align: center;
+	}
+
+    .menu-hamburguer {
+        display: flex; /* Exibe o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+
+    .menu {
+        display: none; /* Esconde o menu padrão inicialmente */
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        flex-direction: column; /* Os itens do menu ficam em coluna */
+        background-color: rgba(14, 89, 53, 0.9); /* Verde escuro com 90% de opacidade */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+	
+	.menu-hamburguer span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFCE2; /* Cor das barras */
+        border-radius: 3px;
+    }
+
+    .menu ul {
+        display: block; /* Itens em lista vertical */
+		margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+	
+	.menu a {
+        font-size: 20px; /* Reduz a fonte dos links */
+        padding: 10px 15px; /* Ajusta o padding para um clique confortável */
+        text-align: center; /* Centraliza o texto */
+        display: block; /* Faz o link ocupar toda a largura */
+    }
+
+.contact-content {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        gap: 10px; /* Espaçamento entre a imagem e o formulário */
+    }
+
+    .contact-form {
+        order: 1; /* Exibe o formulário primeiro */
+    }
+
+    .contact-image {
+        order: 2; /* Exibe a imagem depois */
+    }
+
+    .contact-image img {
+        width: 100%; /* Imagem ajusta à largura da tela */
+        max-width: none; /* Remove limites de largura */
+		margin-top: 65px;
+    }
+
+    .contact-form h2 {
+		width: 100%; 
+        text-align: center; 
+        margin: 0; 
+        padding: 5px 0;
+        font-size: 27px; 
+		margin-top: -50px;
+	}
+	
+	.contact-form label {
+		font-size:22px;
+	}
+	
+	.contact-form button {
+    align-self: center;
+	margin-top: 20px;
+	}
+	
+    .footer-image {
+    width: 400px;
+	margin-right: 20px;
+	}
 }

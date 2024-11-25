@@ -9,6 +9,7 @@
 body {
     font-family: Montserrat, sans-serif;
 	padding-top: 70px; /* Ajuste conforme a altura do seu cabeçalho */
+    overflow-x: hidden; /* Remove rolagem horizontal */	
 }
 
 .main-table {
@@ -34,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, menu à direita */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    max-width: 100%; /* Limita a largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
@@ -42,6 +43,7 @@ body {
 .logo {
     max-height: 85px;
     width: auto;
+    margin-left: 150px;
 }
 
 /* Menu */
@@ -63,10 +65,41 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Estilo padrão para o desktop */
+.menu {
+    display: flex; /* Exibe o menu horizontalmente em desktop */
+    justify-content: flex-start;
+}
+
 .menu a:hover,
 .menu a.active { /* Estilo para hover e página ativa */
     background-color: #B7CB9E;
     color: #0E5935; /* Verde escuro */
+}
+
+/* Estilo padrão para desktop */
+.menu-hamburguer {
+    display: none; /* O botão hambúrguer não aparece no desktop */
+	flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFCE2; /* Cor das barras */
+    border-radius: 3px;
+}
+
+.etapa-titulo {
+    font-size:30px;
+    color:#0E5935;
+    text-align: center;
+	margin-bottom: 30px;
 }
 
 h2.titulo-processo {
@@ -78,7 +111,8 @@ h2.titulo-processo {
 h3.numero-etapa {
     font-size: 37px;
     color: #0E5935;
-    margin-top: 20px;
+    margin-top: -100px;
+	margin-left: 120px;
 }
 
 h3.nome-etapa {
@@ -87,36 +121,56 @@ h3.nome-etapa {
     font-weight: 600;
     margin-top: 5px;
     margin-bottom: 10px;
+	margin-left: 120px;
 }
 
 .paragrafo-processo {
     font-size: 22px;
+	margin-left: 120px;
+	margin-right: 120px;
+}
+
+.processo {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+}
+
+.etapa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.texto-lado-esquerdo, .texto-lado-direito {
+    flex: 1;
+    padding: 20px;
+	margin-top: 50px;
+}
+
+.imagem-lado-esquerdo, .imagem-lado-direito {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .img-processo {
-    width: 80%;
-    height: auto;
+    width: 70%;
     border-radius: 15px;
-    margin-bottom: 20px;
-	margin-top: 80px
 }
 
-.imagem-lado-esquerdo img {
-    width: 80%;
-    height: auto;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.texto-container {
-    margin-left: 95px; /* Ajuste conforme necessário */
+html, body {
+    overflow-x: hidden;
 }
 
 footer {
     background-color: #B7CB9E; 
     padding:7px;
     text-align: center;
-	margin-top: 70px;
+	max-width: 100%;
+    margin-top: 90px;
 }
 
 .footer-container {
@@ -133,4 +187,119 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+}
+
+/* Celulares */
+@media only screen and (max-width: 800px) {
+	.logo {
+    max-height: 150px;
+    width: 100px;
+	margin-left: 25px;
+    }
+	
+    .header-content {
+		align-items: center;
+		text-align: center;
+	}
+
+    .menu-hamburguer {
+        display: flex; /* Exibe o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+
+    .menu {
+        display: none; /* Esconde o menu padrão inicialmente */
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        flex-direction: column; /* Os itens do menu ficam em coluna */
+        background-color: rgba(14, 89, 53, 0.9); /* Verde escuro com 90% de opacidade */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+	
+	.menu-hamburguer span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFCE2; /* Cor das barras */
+        border-radius: 3px;
+    }
+
+    .menu ul {
+        display: block; /* Itens em lista vertical */
+		margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+	
+	 .menu a {
+        font-size: 20px; /* Reduz a fonte dos links */
+        padding: 10px 15px; /* Ajusta o padding para um clique confortável */
+        text-align: center; /* Centraliza o texto */
+        display: block; /* Faz o link ocupar toda a largura */
+    }
+	
+	.etapa-titulo {
+		width: 100%; 
+        text-align: center; 
+        margin: 0; 
+        padding: 5px 0;
+        font-size: 22px; 
+        margin-top: -75px;
+	}
+	
+    .etapa {
+        flex-direction: column; /* Muda a disposição para uma coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
+	
+	.texto-lado-esquerdo, .texto-lado-direito {
+        margin-top: 0; /* Remove o espaçamento extra */
+        padding: 10px 15px; /* Ajusta o espaçamento interno */
+        order: 1; /* Faz o texto aparecer antes */
+    }
+
+    .imagem-lado-esquerdo, .imagem-lado-direito {
+        justify-content: center; /* Centraliza a imagem */
+        margin-top: 10px; /* Adiciona um espaço entre o texto e a imagem */
+        order: 2; /* Faz a imagem aparecer depois */
+    }
+
+    h3.numero-etapa {
+        font-size: 28px; /* Ajusta o tamanho para telas menores */
+        margin-left: 0; /* Remove o espaçamento lateral */
+		margin-top: -20px;
+    }
+
+    h3.nome-etapa {
+        font-size: 25px; /* Ajusta o tamanho para telas menores */
+        margin-left: 0; /* Remove o espaçamento lateral */
+        margin-top: 10px; /* Dá espaço entre o número e o título */
+    }
+
+    .paragrafo-processo {
+        font-size: 16px; /* Diminui a fonte para dispositivos menores */
+        margin: 10px 0; /* Ajusta o espaçamento dos parágrafos */
+    }
+
+    .img-processo {
+        width: 90%; /* Reduz o tamanho da imagem para caber na tela */
+    }
+	
+    .footer-image {
+    width: 400px;
+	margin-right: 20px;
+	margin-top: 10px;
+	}
 }

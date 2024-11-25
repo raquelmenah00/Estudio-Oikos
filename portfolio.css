@@ -9,6 +9,7 @@
 body {
     font-family: Montserrat, sans-serif;
 	padding-top: 1200px; /* Ajuste conforme a altura do seu cabeçalho */
+    overflow-x: hidden; /* Remove rolagem horizontal */	
 }
 
 .main-table {
@@ -34,7 +35,7 @@ body {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, menu à direita */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    max-width: 100%; /* Limita a largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
@@ -42,6 +43,7 @@ body {
 .logo {
     max-height: 85px;
     width: auto;
+    margin-left: 150px;
 }
 
 /* Menu */
@@ -63,19 +65,60 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Estilo padrão para o desktop */
+.menu {
+    display: flex; /* Exibe o menu horizontalmente em desktop */
+    justify-content: flex-start;
+}
+
 .menu a:hover,
 .menu a.active { /* Estilo para hover e página ativa */
     background-color: #B7CB9E;
     color: #0E5935; /* Verde escuro */
 }
 
+/* Estilo padrão para desktop */
+.menu-hamburguer {
+    display: none; /* O botão hambúrguer não aparece no desktop */
+	flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFCE2; /* Cor das barras */
+    border-radius: 3px;
+}
+
+.galeria-titulo {
+    font-size:28px;
+    color:#0E5935;
+    text-align: center;
+}
+
+.galeria-container {
+    display: flex;
+    flex-direction: column;
+	align-items: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre as linhas */
+}
+
+.galeria-linha {
+    display: flex;
+    justify-content: center;
+    gap: 185px; /* Espaçamento entre os itens */
+	flex-wrap: wrap; /* Permite quebra de linha, caso necessário */
+}
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    max-width: 800px;
+    flex: 1; /* Permite que os itens se ajustem igualmente */
+    text-align: center;
+    margin: 0;
 }
 
 .gallery-item {
@@ -112,9 +155,10 @@ body {
     margin-top: 7px;
 	text-decoration: none;
     color: #0E5935; 
-    font-size: 20px; 
+    font-size: 19px; 
     font-weight: bold; 
     font-family: Montserrat, sans-serif; 
+    cursor: pointer;
 }
 
 .gallery-item button:hover {
@@ -132,12 +176,20 @@ body {
   transform: scale(1.1); /* aumenta a imagem em 10% */
 }
 
+.galeria-img.no-zoom:hover {
+    transform: none; /* Remove o zoom para imagens com a classe no-zoom */
+  }
+
+html, body {
+    overflow-x: hidden;
+  }
 
 footer {
     background-color: #B7CB9E; 
     padding:7px;
     text-align: center;
 	margin-top: 90px;
+    max-width: 100%;
 }
 
 .footer-container {
@@ -154,4 +206,103 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+}
+
+/* Responsividade */
+@media only screen and (max-width: 800px) {
+.logo {
+    max-height: 150px;
+    width: 100px;
+	margin-left: 25px;
+}
+	
+.header-content {
+		align-items: center;
+		text-align: center;
+}
+
+.menu-hamburguer {
+        display: flex; /* Exibe o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 40px;
+}
+
+.menu {
+        display: none; /* Esconde o menu padrão inicialmente */
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        flex-direction: column; /* Os itens do menu ficam em coluna */
+        background-color: rgba(14, 89, 53, 0.9); /* Verde escuro com 90% de opacidade */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+}
+	
+.menu-hamburguer span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFCE2; /* Cor das barras */
+        border-radius: 3px;
+}
+
+.menu ul {
+        display: block; /* Itens em lista vertical */
+		margin: 0;
+        padding: 0;
+}
+
+.menu li {
+        margin: 15px 0;
+}
+	
+.menu a {
+        font-size: 20px; /* Reduz a fonte dos links */
+        padding: 10px 15px; /* Ajusta o padding para um clique confortável */
+        text-align: center; /* Centraliza o texto */
+        display: block; /* Faz o link ocupar toda a largura */
+}
+
+.galeria-titulo {
+    width: 100%;
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 18px;
+    margin-top: -80px;
+    margin-bottom: -50px;
+}
+
+.galeria-container {
+    flex-direction: column; /* Organiza os itens verticalmente */
+    gap: 20px; /* Espaçamento entre os projetos */
+}
+
+.galeria-linha {
+    flex-direction: column; /* Cada linha se torna uma coluna */
+    gap: 5px;
+}
+
+.gallery {
+    margin: 0 auto; /* Centraliza cada projeto na tela */
+    width: 90%; /* Reduz a largura para caber melhor no celular */
+}
+
+.gallery-item button { 
+    font-size: 17px; 
+}
+
+.gallery-item p {
+    font-size: 19px;
+}
+
+.footer-image {
+    width: 400px;
+	margin-right: 20px;
+	}
 }

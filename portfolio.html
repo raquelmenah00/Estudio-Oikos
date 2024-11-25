@@ -10,9 +10,17 @@
 
     <table class="main-table">
         <!-- Cabeçalho com o logo -->
+
 <header class="header">
     <div class="header-content">
         <img src="logo_site.png" alt="Logo do Site" class="logo">
+<!-- Botão hambúrguer (visível apenas no mobile) -->
+<div class="menu-hamburguer">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<!-- Menu de navegação -->
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,98 +34,82 @@
 </header>
 
 <!-- Título da Galeria -->
-        <tr>
-            <td colspan="2" class="texto-lado-esquerdo" style="padding-left:8.5%;">
-                <h2 style="font-size:44px; color:#0E5935; margin-left: -60px; margin-top: 155px">Confira nossos projetos mais recentes </h2>
-            </td>
-        </tr>
+<div class="galeria-titulo" >
+    <h2 style="margin-top: 155px;">Confira nossos projetos mais recentes</h2>
+</div>
 
-        <!-- Galeria de Projetos -->
-        <tr>
-            <td>
-                <div class="gallery">
-                    <div class="gallery-item">
-					    <a href="portfolio2.html">
-                        <img src="cozinha.png" alt="Cozinha moderna" class="galeria-img" style="cursor: pointer;" >
-						</a>
-                        <p>Cozinha moderna, 2024</p>
-                    </div>
-				</div>
-			</td>
-			<td>
-			    <div class="gallery">
-				    <div class="gallery-item">
-                        <img src="casainterior.png" alt="Casa no interior" class="galeria-img">
-                        <p>Casa no interior, 2024</p>
-                    </div>
-				</div>
-		    </td>
-			<td>
-				<div class="gallery">
-					<div class="gallery-item">
-                        <img src="cafeteria.png" alt="Cafeteria sustentável" class="galeria-img">
-                        <p>Cafeteria Zen, 2024</p>
-                    </div>
-				</div>
-			</td>
-	    </tr>
-					
-		<tr>
-			<td>
-                <div class="gallery">
-				    <div class="gallery-item">
-                        <img src="escritorio.png" alt="Escritorio comercial" class="galeria-img">
-                        <p>Escritório comercial, 2024</p>
-                    </div>
-				</div>
-			</td>
-			<td>
-			    <div class="gallery">
-                    <div class="gallery-item">
-					    <img src="projeto.png" alt="Quadrado branco com a frase: Seu projeto aqui!" class="galeria-img">
-						<a href="contato.html">
-                        <button>Entre em contato conosco</button>
-						</a>
-                    </div>
-				</div>
-			</td>
-			<td>
-			    <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="banheiro.png" alt="Banheiro ecológico" class="galeria-img">
-                        <p>Banheiro ecológico, 2023</p>
-                    </div>
-                </div>
-            </td>
-	    </tr>
-		
-		<tr>
-			<td>
-                <div class="gallery">
-				    <div class="gallery-item">
-                        <img src="jardim.png" alt="Jardim minimalista" class="galeria-img">
-                        <p>Jardim minimalista, 2023</p>
-                    </div>
-				</div>
-			</td>
-			<td>
-			    <div class="gallery">
-                    <div class="gallery-item">
-					    <img src="lojaroupas.png" alt="Loja de roupas" class="galeria-img">
-						<p>Loja de roupas, 2023</p>
-                    </div>
-				</div>
-			</td>
-			<td>
-			    <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="quintal.jpg" alt="Escritório no quintal" class="galeria-img">
-                        <p>Escritório no quintal, 2022</p>
-                    </div>
-                </div>
-            </td>
-	    </tr>
-    </table>
+<!-- Galeria de Projetos -->
+<div class="galeria-container">
+    <!-- Linha 1 -->
+    <div class="galeria-linha">
+        <div class="gallery">
+            <div class="gallery-item">
+                    <img src="cozinha.png" alt="Cozinha moderna" class="galeria-img"">
+                </a>
+                <p>Cozinha moderna, 2024</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="casainterior.png" alt="Casa no interior" class="galeria-img">
+                <p>Casa no interior, 2024</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="cafeteria.png" alt="Cafeteria sustentável" class="galeria-img">
+                <p>Cafeteria Zen, 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linha 2 -->
+    <div class="galeria-linha">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="escritorio.png" alt="Escritório comercial" class="galeria-img">
+                <p>Escritório comercial, 2024</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="projeto.png" alt="Quadrado branco com a frase: Seu projeto aqui!" class="galeria-img no-zoom">
+                <a href="contato.html">
+                    <button>Entre em contato conosco</button>
+                </a>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="banheiro.png" alt="Banheiro ecológico" class="galeria-img">
+                <p>Banheiro ecológico, 2023</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linha 3 -->
+    <div class="galeria-linha">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="jardim.png" alt="Jardim minimalista" class="galeria-img">
+                <p>Jardim minimalista, 2023</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="lojaroupas.png" alt="Loja de roupas" class="galeria-img">
+                <p>Loja de roupas, 2023</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="quintal.jpg" alt="Escritório no quintal" class="galeria-img">
+                <p> Quintal coberto, 2022</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 	
 <footer>
         <div class="footer-container">
@@ -128,6 +120,14 @@
         </div>
 </footer>
 
+<script>
+    const menuHamburguer = document.querySelector('.menu-hamburguer');
+    const menu = document.querySelector('.menu');
+
+    menuHamburguer.addEventListener('click', () => {
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+</script>
+
 </body>
 </html>
-

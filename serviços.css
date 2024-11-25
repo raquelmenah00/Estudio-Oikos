@@ -9,6 +9,7 @@
 body {
     font-family: Montserrat, sans-serif;
 	padding-top: 70px; /* Ajuste conforme a altura do seu cabeçalho */
+    overflow-x: hidden; /* Remove rolagem horizontal */	
 }
 
 .main-table {
@@ -16,8 +17,10 @@ body {
     border-collapse: collapse;
     max-width: 100%;
     margin: 0 auto; 
+    padding: 0;
     overflow-x: hidden;
-    table-layout: fixed
+    table-layout: fixed;
+    flex: 1;
 }
 
 /* Estilo do Cabeçalho */
@@ -34,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between; /* Logo à esquerda, menu à direita */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    max-width: 100%; /* Limita a largura máxima do conteúdo */
     margin: 0 auto; /* Centraliza o conteúdo */
 }
 
@@ -42,6 +45,7 @@ body {
 .logo {
     max-height: 85px;
     width: auto;
+    margin-left: 150px;
 }
 
 /* Menu */
@@ -63,75 +67,112 @@ body {
     transition: background-color 0.3s;
 }
 
+/* Estilo padrão para o desktop */
+.menu {
+    display: flex; /* Exibe o menu horizontalmente em desktop */
+    justify-content: flex-start;
+}
+
 .menu a:hover,
 .menu a.active { /* Estilo para hover e página ativa */
     background-color: #B7CB9E;
     color: #0E5935; /* Verde escuro */
 }
 
-/* Seção de Serviços */
-.servicos-section {
+/* Estilo padrão para desktop */
+.menu-hamburguer {
+    display: none; /* O botão hambúrguer não aparece no desktop */
+	flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFCE2; /* Cor das barras */
+    border-radius: 3px;
+}
+
+/* Nossos Serviços */
+.nossos-servicos {
     text-align: center;
     padding: 40px 10px;
 }
 
+/* Configuração da grade */
 .servicos-container {
     display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 150fr));
-    gap: 35px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 35px; /* Espaçamento entre os itens */
     padding: 0 8.5%;
-	margin-top: 50px;
-	margin-left: -67px;
-	margin-right: 80px;
-
+    margin-top: 50px;
 }
 
+/* Estilo dos itens */
 .servico-item {
     background-color: #DEE5C3;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     text-align: center;
-	min-height: 480px; /* Define uma altura mínima */
-	height: 380px;
-	margin-bottom: 25px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+/* Ícones */
 .icone {
     width: 80px;
     height: auto;
-    margin-bottom: 3px;
-	margin-top: 0px;
+    margin-bottom: 15px;
 }
 
-.icone-ajuste {
-    margin-top: -35px; /* Ajuste para posicionar corretamente */
-}
-
-.icone-ajustar {
-	margin-top: -60px; /* Ajuste para posicionar corretamente */
+/* Títulos */
+.titulo-servicos {
+    font-size:30px;
+    color:#0E5935;
+    margin-top: 110px;
 }
 
 .servico-item h3 {
     color: #0E5935;
     font-size: 1.3em;
     margin-bottom: 10px;
-	margin-left: 20px;
+    font-weight: 650;
+	font-size: 30px;
 }
 
+/* Parágrafos */
 .servico-item p {
     line-height: 1.6;
-	text-align: left;
-	margin-left: 10px;
-	margin-right: 0px;
-	margin-top: 10px;
+    text-align: left;
+    margin: 10px 10px 0;
+    font-size: 20px;
+}
+
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 footer {
     background-color: #B7CB9E; 
     padding:7px;
     text-align: center;
-	margin-top: 90px;
+	max-width: 100%;
+    margin-top: 50px;
 }
 
 .footer-container {
@@ -148,4 +189,105 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+}
+
+/* Celulares */
+@media only screen and (max-width: 800px) {
+	.logo {
+    max-height: 150px;
+    width: 100px;
+	margin-left: 25px;
+    }
+	
+    .header-content {
+		align-items: center;
+		text-align: center;
+	}
+
+    .menu-hamburguer {
+        display: flex; /* Exibe o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+
+    .menu {
+        display: none; /* Esconde o menu padrão inicialmente */
+        position: absolute;
+        top: 100%;
+        right: 5px;
+        flex-direction: column; /* Os itens do menu ficam em coluna */
+        background-color: rgba(14, 89, 53, 0.9); /* Verde escuro com 90% de opacidade */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+	
+	.menu-hamburguer span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FFFCE2; /* Cor das barras */
+        border-radius: 3px;
+    }
+
+    .menu ul {
+        display: block; /* Itens em lista vertical */
+		margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+	
+	 .menu a {
+        font-size: 20px; /* Reduz a fonte dos links */
+        padding: 10px 15px; /* Ajusta o padding para um clique confortável */
+        text-align: center; /* Centraliza o texto */
+        display: block; /* Faz o link ocupar toda a largura */
+    }
+
+    .servico-item {
+        min-height: 250px; /* Altura menor */
+        padding: 10px; /* Menor espaçamento interno */
+        width: 300px /* Preencher quase toda a largura da tela */
+		margin: 0 auto; /* Centralizar os quadrados */
+    }
+
+    .servicos-container {
+        grid-template-columns: 1fr; /* Apenas 1 coluna em telas pequenas */
+    }
+    
+    .icone {
+        width: 50px; /* Ícones menores */
+        margin-bottom: 10px;
+    }
+    
+	.servico-item h3 {
+        font-size: 24px; /* Tamanho menor do título dentro dos quadrados */
+    }
+	
+	.servico-item p {
+        font-size: 16px; /* Texto menor */
+        line-height: 1.4; /* Reduzir espaçamento entre linhas */
+    }
+	
+    .titulo-servicos {
+        width: 100%; 
+        text-align: center; 
+        margin: 0; 
+        padding: 5px 0;
+        font-size: 22px; 
+        margin-top: 40px;
+	}
+	
+    .footer-image {
+    width: 400px;
+	margin-right: 20px;
+	}
 }

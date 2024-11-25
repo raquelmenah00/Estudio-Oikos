@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contato.css">
-    <title>Estúdio Oikos: Design de Interiores Sustentável</title>
+    <title>Estúdio Oikos: Contato</title>
 </head>
 <body style="background-color:#FFFCE2; margin: 0; padding: 0; overflow-x: hidden;">
 
@@ -13,48 +13,51 @@
 <header class="header">
     <div class="header-content">
         <img src="logo_site.png" alt="Logo do Site" class="logo">
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfólio</a></li>
-                <li><a href="serviços.html">Serviços</a></li>
-                <li><a href="etapas.html">Etapas</a></li>
-                <li><a href="contato.html" style="background-color: #B7CB9E" class="active">Contato</a></li>
-            </ul>
-        </nav>
-    </div>
+<!-- Botão hambúrguer (visível apenas no mobile) -->
+<div class="menu-hamburguer">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<!-- Menu de navegação -->      
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="serviços.html">Serviços</a></li>
+                    <li><a href="etapas.html">Etapas</a></li>
+                    <li><a href="contato.html" style="background-color: #B7CB9E" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
 </header>
 		
-		<!-- Título da página de contato -->
-		<tr>
-            <td colspan="2" class="texto-lado-esquerdo" style="padding-left:8.5%;">
-                <h2 style="font-size:44px; color:#0E5935; margin-top: 155px">Vamos conversar sobre seu projeto?</h2>
-            </td>
-        </tr>
-		
-		<!-- Formulário de Contato -->
-		<tr>
-            <td colspan="2">
-		        <div class="contact-container">
-                    <form action="#" method="post">
-                         <label for="name">Nome Completo</label>
-                         <input type="text" id="name" name="name" required>
+		<section class="contact-section">
+    <div class="contact-content">
+        <div class="contact-image">
+            <img src="cadeira_contato.jpg" alt="Imagem decorativa">
+        </div>
+        <div class="contact-form">
+            <h2>Vamos conversar sobre seu projeto?</h2>
+            <form action="#" method="post">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" required>
 
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
 
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" required>
 
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-            </td>
-        </tr>
-</table>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 		
 <footer>
         <div class="footer-container">
@@ -64,6 +67,15 @@
             </div>
         </div>
 </footer>
+
+<script>
+    const menuHamburguer = document.querySelector('.menu-hamburguer');
+    const menu = document.querySelector('.menu');
+
+    menuHamburguer.addEventListener('click', () => {
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+</script>
 
 </body>
 </html>
