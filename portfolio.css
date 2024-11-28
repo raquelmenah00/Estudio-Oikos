@@ -53,6 +53,7 @@ body {
     gap: 2px; /* Espaçamento entre os itens */
     margin: 0;
     padding: 0;
+	margin-right: 20px;
 }
 
 .menu a {
@@ -186,7 +187,7 @@ html, body {
 
 footer {
     background-color: #B7CB9E; 
-    padding:7px;
+    padding:15px;
     text-align: center;
 	margin-top: 90px;
     max-width: 100%;
@@ -206,6 +207,8 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+	font-size: 20px;
+	font-weight: 500;
 }
 
 /* Responsividade */
@@ -302,7 +305,11 @@ footer {
 }
 
 .footer-image {
-    width: 400px;
+    max-width: 100%;
 	margin-right: 20px;
+	}
+	
+.footer-text {
+		font-size: 15px;
 	}
 }

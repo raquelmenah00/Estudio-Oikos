@@ -53,6 +53,7 @@ body {
     gap: 2px; /* Espaçamento entre os itens */
     margin: 0;
     padding: 0;
+	margin-right: 20px;
 }
 
 .menu a {
@@ -114,7 +115,7 @@ body {
     max-width: 350px;
     border-radius: 10px;
     object-fit: cover;
-	margin-top: 100px;
+	margin-top: 120px;
 }
 
 .contact-form {
@@ -122,7 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-	margin-top: 100px;
+	margin-top: 120px;
 }
 
 .contact-form h2 {
@@ -186,7 +187,7 @@ html, body {
 
 footer {
     background-color: #B7CB9E; 
-    padding:7px;
+    padding:15px;
     text-align: center;
     max-width: 100%;
 	margin-top: 30px;
@@ -206,6 +207,8 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+	font-size: 20px;
+	font-weight: 500;
 }
 
 /* Celulares */
@@ -307,7 +310,11 @@ footer {
 	}
 	
     .footer-image {
-    width: 400px;
+    max-width: 100%;
 	margin-right: 20px;
+	}
+	
+	.footer-text {
+		font-size: 15px;
 	}
 }

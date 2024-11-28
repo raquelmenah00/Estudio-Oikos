@@ -10,6 +10,9 @@ body {
     font-family: Montserrat, sans-serif;
 	padding-top: 70px; /* Ajuste conforme a altura do seu cabeçalho */
     overflow-x: hidden; /* Remove rolagem horizontal */	
+	display: flex;
+    flex-direction: column;
+	flex: 1;
 }
 
 .main-table {
@@ -17,8 +20,10 @@ body {
     border-collapse: collapse;
     max-width: 100%;
     margin: 0 auto; 
+	padding: 0;
     overflow-x: hidden;
-    table-layout: fixed
+    table-layout: fixed;
+	flex: 1;
 }
 
 /* Estilo do Cabeçalho */
@@ -53,6 +58,7 @@ body {
     gap: 2px; /* Espaçamento entre os itens */
     margin: 0;
     padding: 0;
+	margin-right: 20px;
 }
 
 .menu a {
@@ -162,15 +168,21 @@ h3.nome-etapa {
 }
 
 html, body {
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
     background-color: #B7CB9E; 
-    padding:7px;
+    padding:15px;
     text-align: center;
-	max-width: 100%;
-    margin-top: 90px;
+	width: 100%;
+    margin-top: auto;
+    bottom: 0;
+	margin-top: 70px;
 }
 
 .footer-container {
@@ -187,6 +199,8 @@ footer {
 
 .footer-text {
     color: #0E5935; 
+	font-size: 20px;
+	font-weight: 500;
 }
 
 /* Celulares */
@@ -298,8 +312,12 @@ footer {
     }
 	
     .footer-image {
-    width: 400px;
+    max-width: 100%;
 	margin-right: 20px;
 	margin-top: 10px;
+	}
+	
+	.footer-text {
+		font-size: 15px;
 	}
 }
