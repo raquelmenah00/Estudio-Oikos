@@ -112,7 +112,7 @@ body {
 .galeria-linha {
     display: flex;
     justify-content: center;
-    gap: 185px; /* Espaçamento entre os itens */
+    gap: 170px; /* Espaçamento entre os itens */
 	flex-wrap: wrap; /* Permite quebra de linha, caso necessário */
 }
 

@@ -115,14 +115,14 @@ h2.titulo-processo {
 }
 
 h3.numero-etapa {
-    font-size: 37px;
+    font-size: 35px;
     color: #0E5935;
     margin-top: -100px;
 	margin-left: 120px;
 }
 
 h3.nome-etapa {
-    font-size: 37px;
+    font-size: 32px;
     color: #0E5935;
     font-weight: 600;
     margin-top: 5px;
@@ -131,7 +131,7 @@ h3.nome-etapa {
 }
 
 .paragrafo-processo {
-    font-size: 22px;
+    font-size: 20px;
 	margin-left: 120px;
 	margin-right: 120px;
 }
